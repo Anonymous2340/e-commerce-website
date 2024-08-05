@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --color-logo-main: orange;
+    --color-2: #3e3e55;
+    --bacgkground-color--button-search: #282828;
+    --theme-header-color: #454545;
+    --color-3: #FFF;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    overflow-x: hidden;
+}
+
+
+
+
+/* Header edition */
+.header {
+    display: grid;
+    grid-template-columns: 5% 15% 55% 26%;
+    background: var(--theme-header-color);
+}
+
+.header .menu {
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .logo {
+    display: flex;
+    font-size: 1.6em;
+    color: #ccc;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo span {
+    color: var(--color-logo-main);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.search-bar input[type="text"] {
+    width: 70%;
+    font-size: 1.29em;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: var(--color-2);
+}
+
+.search-bar button {
+    font-size: 1.29em;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    background: var(--bacgkground-color--button-search);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: var(--color-logo-main);
+}
+
+.person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.person button {
+    font-size: 1.3em;
+    padding: 5px 8px;
+    justify-self: flex-start;
+    background: var(--color-logo-main);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition-property: border-color, color;
+}
+
+.person button:active {
+    border-color: var(--color-3);
+    scale:0.95;
+}
+
+.person .profile {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--color-logo-main);
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0 20px 0 50px;
+    cursor: pointer;
+}
+
+.profile img {
+    width: inherit;
+    height: inherit;
+}
+
+
+
+/* Main Container */
+.container {
+    width: inherit;
+    height: 70%;
+    overflow: hidden;
+}
+
+.container .presentation {
+    width: inherit;
+    height: 100%;
+    position: relative;
+}
+
+.presentation img {
+    width: inherit;
+    position: absolute;
+    z-index: -1;
+}
+
+.presentation .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 10px;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.links a {
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 5px 0;
+    width: 110px;
+    text-decoration: none;
+    color: var(--color-3);
+    font-size: 0.9em;
+    position: relative;
+    margin: 0 5px;
+}
+
+a::after {
+    content: "";
+    width: inherit;
+    height: 2px;
+    background-color: var(--color-logo-main);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+.person button, .links a::after {
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+/* Products */
+.products {
+    width: 95%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 0 2.5%;
+}
+
+.products .items {
+    border: 1px solid #000;
+    height: 450px;
+}
